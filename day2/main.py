@@ -3,9 +3,9 @@ lines = file1.readlines()
 
 sum = 0
 for line in lines:
-    red_count = -1
-    green_count = -1
-    blue_count = -1
+    red_count = 0
+    green_count = 0
+    blue_count = 0
     splitted_line = line.strip().split(":")
     game_number = int(splitted_line[0].split(" ")[1])
     current_game = splitted_line[1]
@@ -23,9 +23,8 @@ for line in lines:
                 green_count = max(green_count, ball_number)
             else:
                 blue_count = max(blue_count, ball_number)
-    if (red_count <= 12 and green_count<=13 and blue_count <=14):
-        print("game:", game_number)
-        sum = sum + game_number
+    print("minm ball needed", "red, blue, green", red_count, blue_count, green_count)
+    sum = sum + (red_count * blue_count * green_count)
 
 
 
